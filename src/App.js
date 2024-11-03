@@ -1,17 +1,15 @@
 import React from 'react';
-import { DrawingProvider } from './DrawingContext';
-import MapComponent from './components/MapComponent';
-import CanvasComponent from './components/CanvasComponent';
+import { MapProvider } from './context/MapContext';
+import MrMap from './components/MrMap';
 
 const App = () => {
-    return (
-        <DrawingProvider>
-            <div style={{ position: 'relative', height: '100vh' }}>
-                <MapComponent />
-                <CanvasComponent />
-            </div>
-        </DrawingProvider>
-    );
+  return (
+    <div className="h-full w-full">
+      <MapProvider>
+        <MrMap />
+      </MapProvider>
+    </div>
+  );
 };
 
 export default App;
